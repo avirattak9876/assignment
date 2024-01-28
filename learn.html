@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+<body>
+
+   
+     
+
+
+
+    <!-- <input type="text" id="myvalue"> -->
+   
+    <button onclick="move();" > MOVE</button>
+   <img id="dra" src="assign2/dragon.jpg" alt="" style="margin-left: 30px;">
+
+
+    <script >
+
+  function move(){
+    var x = document.getElementById('dra').style.marginLeft;
+    console.log(x);
+    let y=parseInt(x);
+    y=y+5;
+    document.getElementById('dra').style.marginLeft=y+"px";
+    
+  }
+
+
+    </script>
+</body>
+</html>

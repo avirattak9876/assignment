@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="head">SNAKE GAME</h1>
+
+    <div class="outer">
+
+        <div class="control">
+
+            <button class="aa" onclick="moveleft()">MOVE-LEFT</button>
+            <button class="aa" onclick="moveright()">MOVE-RIGHT</button>
+            <button class="aa" onclick="moveup()">MOVE-UP</button>
+            <button class="aa" onclick="movedown()">MOVE-DOWN</button>
+
+
+        </div>
+
+
+        <br>
+        <br>
+        <hr>
+
+        <div class="sim">
+            <div class="first">
+
+                <img id="appl" src="assign2/apple.png" alt=""
+                    style="margin-left: 0px; width: 80px; margin-top: 0px; display: inline;">
+
+            </div>
+
+
+
+
+            <div class="second">
+
+                <img id="snak" src="assign2/snake.png" alt="" srcset=""
+                    style="margin-left: 10rem; width: 80px; margin-top: 20px; display: inline; ">
+
+            </div>
+
+        </div>
+
+
+
+        <script>
+
+            applemove();
+            check();
+            
+
+            var point=0;
+
+            function check( k, z,a,b){
+                
+                if (k==a && z==b) {
+                     applemove();
+                     point++;
+                }
+
+            }
+
+
+
+            function applemove() {
+                var j = Math.floor(Math.random() * 50);
+                var r = Math.floor(Math.random() * 50);
+
+                document.getElementById('appl').style.marginTop = (j + "rem");
+                document.getElementById('appl').style.marginLeft = (r + "rem");
+
+
+                console.log(j);
+                console.log(r);
+
+
+
+
+
+            }
+
+            function moveleft() {
+                var x = document.getElementById('snak').style.marginLeft;
+                var y = document.getElementById('snak').style.marginTop;
+                var a = document.getElementById('appl').style.marginLeft;
+                var b = document.getElementById('appl').style.marginTop;
+                console.log(x);
+                let k = parseInt(x);
+                k = k + 5;
+                k = (k+"rem");
+                document.getElementById('snak').style.marginLeft = k;
+                
+                z
+                check(k,z,a,b);
+
+            }
+
+            function moveright() {
+                
+                var x = document.getElementById('snak').style.marginLeft;
+                var y = document.getElementById('snak').style.marginTop;
+                var a = document.getElementById('appl').style.marginLeft;
+                var b = document.getElementById('appl').style.marginTop;
+                console.log(x);
+                let k = parseInt(x);
+                k = k - 5;
+                k = (k+"rem");
+                document.getElementById('snak').style.marginLeft = k ;
+                check(k,z,a,b);
+            }
+
+
+            function moveup() {
+                
+                
+                var x = document.getElementById('snak').style.marginLeft;
+                var y = document.getElementById('snak').style.marginTop;
+                var a = document.getElementById('appl').style.marginLeft;
+                var b = document.getElementById('appl').style.marginTop;
+
+
+                console.log(y);
+                let z = parseInt(y);
+                z = z - 5;
+                z= (z+"rem");
+                document.getElementById('snak').style.marginTop = z ;
+                check(k,z,a,b);
+
+            }
+
+
+
+            function movedown() {
+                var x = document.getElementById('snak').style.marginLeft;
+                var y = document.getElementById('snak').style.marginTop;
+                var a = document.getElementById('appl').style.marginLeft;
+                var b = document.getElementById('appl').style.marginTop;
+
+
+                console.log(y);    
+           let z = parseInt(y);
+                z = z + 5;
+                z= (z+"rem");
+                document.getElementById('snak').style.marginTop = z ;
+                check(k,z,a,b);
+
+            }
+
+
+
+          
+
+
+
+
+        </script>
+
+    </div>
+</body>
+
+</html>

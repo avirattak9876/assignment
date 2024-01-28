@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <div>
+          <p>Todo List Practice 1</p>
+
+          <input class="tt" type="text" placeholder="Todo name">
+          <input class="pp" type="date">
+          <button onclick="addi();">Add</button>
+
+    </div>
+
+    <div class="ll"></div>
+
+  <script>
+
+     let todolist=[{name : 'make dinner',
+       duedate: '2022-12-23'},
+      {name: 'make cofee', duedate:'2022-12-22'}];
+       
+
+     
+      function rendertodo(){
+
+        let todo='';
+
+
+        for (let index = 0; index < todolist.length; index++) {
+            let element = todolist[index];
+            //let name= element.name;
+           // let duedate= element.duedate;
+           let{name,duedate}=element;
+           
+            let html= `
+            <div>${name}</div>
+            <div>${duedate}</div> 
+            <button onclick="todolist.splice(${index},1);
+            rendertodo();">Delete</button> `;
+
+            todo +=html
+
+            
+        }
+
+      document.querySelector('.ll').innerHTML=todo;
+
+
+      }
+
+
+
+
+     function addi() {
+
+       let ele= document.querySelector('.tt');
+       let name=ele.value;
+
+       let datele=document.querySelector('.pp');
+       let dateDue=datele.value;
+       
+
+       todolist.push({name: name, duedate: dateDue});
+       
+       console.log(todolist);
+
+       ele.value='';
+       rendertodo();
+     }
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     
+    <button class="rty" onclick=" qwe() ">Add to cart</button>
+
+  <p class="avi"></p>
+
+
+
+ <script>
+
+  let timeoutID;
+    function qwe(){
+    document.querySelector('.avi').innerHTML='ADDED';
+
+   
+    /*setTimeout(function(){
+        document.querySelector('.avi').innerHTML=' '; 
+    },2000);*/
+    
+     clearTimeout(timeoutID);
+
+     timeoutID=setTimeout(function(){
+        document.querySelector('.avi').innerHTML=' '; 
+    },2000);
+
+    };
+
+ </script>
+
+
+
+</body>
+</html>

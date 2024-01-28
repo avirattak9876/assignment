@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under rs40 - +rs10 Shipping</p>
+    <p>Orders over rs40 - FREE Shipping</p>
+
+    <input class="pp" placeholder="cost of order"  onkeydown="
+    
+    if(event.key=== 'Enter'){
+        calculate();
+    } ">
+
+
+    <button
+    
+    onclick="calculate();">Calculate</button>
+
+
+
+    <p class="jkk"></p>
+
+
+
+
+   <script>
+       
+    
+        function calculate(){
+
+             let ele= document.querySelector('.pp');
+             let cost=Number(ele.value);
+
+             if (cost<40) {
+                cost=cost+10;
+                document.querySelector('.jkk').innerHTML=`rs${cost}`;
+             }
+
+             else{
+                document.querySelector('.jkk').innerHTML=`rs${cost}`;
+             }
+
+        }
+
+   </script>
+
+
+
+
+</body>
+</html>

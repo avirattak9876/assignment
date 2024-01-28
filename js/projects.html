@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PROJECTS</title>
+
+<style>
+    .lkl{
+        border: none ;
+        border-radius: 30px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+
+    .is-sub{
+        background-color: rgba(240, 240, 240);
+        color: black;
+    }
+
+</style>
+
+
+
+</head>
+<body>
+    
+ <div>
+    <p>YouTube Subscribe Button</p>
+    <button class="lkl" onclick="
+    on();
+    
+    
+    ">subscribe</button>
+ </div>
+
+
+
+
+
+
+ <script>
+
+
+ function on(){
+    const elem=document.querySelector('button');
+    
+    if (elem.innerHTML === 'subscribe') {
+       elem.innerHTML='subscribed';
+       elem.classList.add('is-sub');
+
+    }
+
+    else{
+        elem.innerHTML='subscribe'
+        elem.classList.remove('is-sub');
+    }
+
+
+}
+ </script>
+
+
+</body>
+</html>
